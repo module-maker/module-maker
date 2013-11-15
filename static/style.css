@@ -1,0 +1,279 @@
+html, body {
+  height: 100%
+}
+
+body {
+  height:100%; 
+  min-height:100%; 
+  position:relative;
+  background-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#sitewrapper {
+  overflow: hidden;
+}
+
+#leftPanel {
+  width: 50%;
+  float: left;
+}
+
+#leftPanel textarea {
+  opacity: 0.0;
+}
+
+#name {
+  font-size: 24px;
+}
+
+input {
+  font-size: 24px;
+}
+
+input#description {
+  width: 100%;
+}
+
+/*#sourceCode {
+  background-color: black;
+  font-family: monospace;
+  font-size: 12px;
+  color: white;
+  height: 591px;
+  width: 1086px;
+}
+*/
+
+#rightPanel {
+  width: 50%;
+  height:100%; 
+  min-height:100%; 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  bottom: 0;
+  overflow: scroll;
+  float: right;
+  background-color: white;
+}
+
+.CodeMirror * {
+  font-family: source-code-pro;
+  font-size: 16px;
+}
+
+#rightPanel h1 {
+  display: none;
+}
+
+#rightPanel p {
+  font-family: gentium-basic;
+  font-size: 20px;
+  margin: 20px 0 20px 0;
+}
+
+#rightPanel strong {
+  color: hsla(220, 80%, 50%, 1.0);
+}
+
+#rightPanel aside {
+  font-family: gentium-basic;
+  font-size: 12px;
+  margin: 20px 0 20px 0;
+}
+
+#login, #docs, #demo, #test, #name, #deps, #publish {
+  margin: 70px 20px 20px 20px;
+  height: 3200px;
+}
+
+#demo .CodeMirror, #test .CodeMirror {
+  height: 250px;
+}
+
+#docs .CodeMirror{
+  height: 500px;
+}
+
+.iframe-container {
+  height: 200px;
+  width: 100%;
+  border: none;
+  background-color: #eee;
+}
+
+button {
+  border-radius: 2px;
+}
+
+#publish button {
+  font-family: source-code-pro;
+  font-size: 27px;
+  padding: 5px;
+  background-color: hsla(220, 70%, 90%, 1.0);
+  border: 1px solid hsla(220, 70%, 50%, 1.0);
+}
+
+#publish p a {
+  color: black;
+  text-decoration: underline;
+}
+
+#publish .publishSuccess {
+  margin-top: 30px;
+  transition: opacity 120ms;
+}
+
+#publish.unpublished .publishSuccess {
+  
+  opacity: 0.0;
+}
+
+#publish.published .publishSuccess {
+  opacity: 1.0;
+}
+
+#depsList {
+  transition: opacity 180ms;
+  opacity: 1.0;
+}
+
+#depsList.hidden {
+  opacity: 0.0;
+}
+
+#deps table {
+  font-family: gentium-basic;
+  margin: 20px 0 0 0;
+  font-size: 24px;
+}
+/*
+#deps table th:first-child, #deps table td:first-child {
+  padding: 0 10px 0 0;
+  text-align: right;
+}*/
+
+#deps table th, #deps table td {
+  padding: 0 0px 0 10px;
+  text-align: left;
+}
+
+#deps table td {
+  font-family: source-code-pro;
+  background-color: hsla(220, 70%, 90%, 1.0);
+  border: 1px solid hsla(220, 70%, 50%, 1.0);
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+
+#deps table td.close {
+  padding: 0px 0px;
+}
+
+#deps table input {
+  font-family: source-code-pro;
+  width: 200px;
+}
+
+#deps a {
+  text-decoration: none;
+  color: black;
+}
+
+#guide.deactivated {
+  opacity: 0.0;
+}
+
+#guide.activated {
+  opacity: 1.0;
+}
+
+#guide.login {
+  transition: opacity 180ms, top 180ms, -webkit-transform 180ms;
+  -webkit-transform: scale(4.0);
+  top: 50%;
+  left: 50%;
+}
+
+#guide.settled {
+  transition-delay: 0.5s;
+  -webkit-transform: scale(1.0);
+  top: 0%;
+  left: 50%;
+  margin: 0px 0px 0px 0px;
+}
+
+#guide {
+  transition: opacity 180ms, top 180ms, margin 180ms, -webkit-transform 180ms;
+  -webkit-transition: opacity 180ms, top 180ms, margin 180ms, -webkit-transform 180ms;
+  transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  padding: 20px 10px 10px 20px;
+  position: fixed;
+  z-index: 30;
+}
+
+#guide button.hidden, #guide .arrow.hidden, #guide .slash.hidden {
+  -webkit-transition: opacity 140ms;
+  transition: opacity 140ms;
+  display: none;
+  opacity: 0.0;
+}
+
+#guide button.invisible, #guide .arrow.invisible, #guide .slash.invisible {
+  -webkit-transition: opacity 140ms;
+  transition: opacity 140ms;
+  opacity: 0.0;
+}
+
+#guide .arrow, #guide .slash {
+  -webkit-transition: opacity 140ms;
+  transition: opacity 140ms;
+  opacity: 1.0;
+}
+
+#guide button {
+  font-family: source-code-pro;
+  opacity: 1.0;
+  -webkit-transition: opacity 140ms;
+  transition: opacity 140ms;
+  font-size: 16px;
+  letter-spacing: -0.75px;
+  padding: 1px 5px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+#guide button.login, #guide button.name {
+  /*color: hsla(240, 80%, 30%, 1.0);*/
+}
+
+#guide button.active {
+  background-color: hsla(220, 70%, 90%, 1.0);
+  border-color: hsla(220, 70%, 50%, 1.0);
+}
+
+#guide button:focus {
+  outline: none;
+}
+
+#blackout {
+  -webkit-transition: opacity 180ms;
+  transition: opacity 180ms;
+  opacity: 0.7;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.loggedIn #blackout {
+  opacity: 0.0;
+}

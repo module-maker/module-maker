@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>npm-the-wizard</title>
+  <link href="/static/style.css" rel="stylesheet" type="text/css" media="screen">
+  <script src="//use.edgefonts.net/ropa-sans;cabin-condensed;source-code-pro;m-1m;gentium-basic.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="/static/codemirror.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body>
+  
+  <div id="blackout"></div>
+  
+  <div id="sitewrapper">
+  
+    <div id="leftPanel">
+
+      <textarea id="sourceCode"></textarea>
+
+    </div>
+    
+    <div id="rightPanel">
+      
+      <div id="guide" class="deactivated login">
+        <iframe style="display: none" src='http://nodeknockout.com/iframe/team-mad-science' frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe>
+        <button id="loginButton" class="login active"><i class="fa fa-github"></i> Authenticate</button>
+        <span id="name-slash" class="name slash hidden">/</span>
+        <button id="scroll-to-name" class="name hidden">Name</button>
+        <span id="deps-arrow" class="deps arrow hidden">⇢</span>
+        <button id="scroll-to-deps" class="deps hidden">Deps</button>
+        <span id="demo-arrow" class="demo arrow hidden">⇢</span>
+        <button id="scroll-to-demo" class="demo hidden">Demo</button>
+        <span id="test-arrow" class="test arrow hidden">⇢</span>
+        <button id="scroll-to-test" class="test hidden">Test</button>
+        <span id="docs-arrow" class="docs arrow hidden">⇢</span>
+        <button id="scroll-to-docs" class="docs hidden">Docs</button>
+        <span id="publish-arrow" class="publish arrow hidden">⇒</span>
+        <button id="publishButton" class="publish hidden">Publish</button>
+      </div>
+      
+      <div id="login">
+
+      </div>
+      
+      <div id="name">
+        <h1>NAME</h1>
+        <input type="text" name="name" id="moduleName" value="" placeholder="name">
+        <p>
+          Your module needs a <strong>name</strong>. This name will be used to create a repository on GitHub as well as name your module for npm.
+        </p>
+        <p>
+          <input type="text" name="description" id="description" value="" placeholder="description">
+        </p>
+        <p>
+          A quick description of your module is a nice addition.
+        </p>
+      </div>
+      
+      <div id="deps">
+        <p>
+          Does your module have any <strong>dependencies</strong>? You can either add them here or by calling require() in your code.
+        </p>
+        <input type="text" name="depsSearch" id="depsSearch" value="">
+        <table id="depsList" class="hidden">
+          <!-- <tr>
+            <th>module</th>
+            <th>local variable name</th>
+          </tr> -->
+        </table>
+        <p>
+          
+        </p>
+      </div>
+      
+      <div id="demo">
+        <p>
+          A <strong>demonstration</strong> will help developers to understand how to use your module.
+        </p>
+        <div id="demoFrame" class="iframe-container"></div>
+        <textarea id="demoSource"></textarea>
+        <aside>
+          This text will be included in the README.md in your module's GitHub repository.
+        </aside>
+      </div>
+      
+      <div id="test">
+        <p>
+          By adding <strong>test code</strong> to your project you'll add a layer of trust to your module that will make it more likely to be used by the community.
+        </p>
+        <div id="testFrame" class="iframe-container"></div>
+        <textarea id="testSource"></textarea>
+        <aside>
+          This text will be written to /test/index.js and assumes the lightweight tape testing framework. Additional files and meta data are created for server based testing infrastructure.
+        </aside>
+      </div>
+      
+      <div id="docs">
+        <p>
+          People using your module would really appreciated some <strong>documentation</strong>. A full set of API calls would be great!
+        </p>
+        <textarea id="docsSource"></textarea>
+        <aside>
+          This text will be included in the README.md in your module's GitHub repository.
+        </aside>
+      </div>
+      
+      <div id="publish" class="unpublished">
+        <p>
+          It is time to <strong>publish</strong>!
+        </p>
+        <p>
+          <label for="npmUserName">npm username:</label>
+          <input type="text" name="npmUserName" id="npmUserName" value="">
+        </p>
+        <p>
+          <button id="publish-to-github-and-npm">Publish to GitHub and npm</button>
+        </p>
+        <p class="publishSuccess">
+          Your module has been published to <a id="npmUrl" href="">npm</a> and stored on <a id="githubUrl" href="">GitHub</a>.
+        </p>
+      </div>
+
+    </div>
+    
+  </div>
+  
+  <script src="entry.js"></script>
+
+</body>
+</html>
